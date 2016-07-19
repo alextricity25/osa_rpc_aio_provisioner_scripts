@@ -3,6 +3,8 @@ apt_mirror: http://mirror.rackspace.com/ubuntu/
 package_upgrade: true
 packages:
   - git-core
+  - screen
+  - vim
 runcmd:
   - export ANSIBLE_FORCE_COLOR=true
   - export PYTHONUNBUFFERED=1
@@ -10,6 +12,8 @@ runcmd:
   - export TAG=master
   - export DEPLOY_AIO=yes
   - curl http://paste.openstack.org/raw/532108/ >> /root/.ssh/authorized_keys
+  - git config --global user.email "miguel.cantu@rackspace.com"
+  - git config --global user.name "Miguel Alex Cantu"
   - git clone -b ${TAG} --recursive ${REPO} /opt/rpc-openstack
   - cd /opt/rpc-openstack && ./scripts/deploy.sh
 
