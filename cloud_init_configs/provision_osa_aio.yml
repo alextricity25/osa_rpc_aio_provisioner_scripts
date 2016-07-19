@@ -6,6 +6,7 @@ packages:
   - screen
   - vim
 runcmd:
+  - export ANSIBLE_ROLE_FETCH_MODE=git-clone
   - export ANSIBLE_FORCE_COLOR=true
   - export PYTHONUNBUFFERED=1
   - export REPO=https://github.com/openstack/openstack-ansible
