@@ -1,0 +1,10 @@
+#cloud-config
+apt_mirror: http://mirror.rackspace.com/ubuntu/
+package_upgrade: true
+packages:
+  - git-core
+  - screen
+  - vim
+runcmd:
+  - git clone https://github.com/alextricity25/osa-multi-node-aio.git /root/osa-multi-node-aio
+output: { all: '| tee -a /var/log/cloud-init-output.log' }
