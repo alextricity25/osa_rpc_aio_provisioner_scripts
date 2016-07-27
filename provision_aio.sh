@@ -24,7 +24,7 @@ if [ $(echo $NAME_OF_VM | wc -m) -gt 20 ]; then
 fi
 
 if [ "${RPC_OR_OSA}" == "osa" ]; then
-    FLAVOR=${FLAVOR:-"7"}
+    FLAVOR=${FLAVOR:-"8"}
 else
     FLAVOR=${FLAVOR:-"performance2-30"}
 fi
