@@ -9,8 +9,6 @@ NUM=0
 # already exists
 function vm_exists () {
   pushd /root/
-    source envs/bin/activate
-    source ~/openrc
     SERVERS=$(openstack server list | grep cantu)
     for SERVER in $SERVERS; do
       if [ "$(echo ${1} | cut -d- -f2)" == $(echo $SERVER | cut -d- -f2) ]; then
@@ -26,7 +24,10 @@ function vm_exists () {
 # cantu/issue/<bug#>
 # Note: the naming convention for my VMS are:
 # cantu-<bug#>-<num>-rpc
+source /root/envs/bin/activate
+source /root/openrc
 pushd /tmp
+  rm -rf rpc-openstack || true
   git clone --recursive https://github.com/rcbops/rpc-openstack
   pushd rpc-openstack
     MY_BRANCHES=$(git branch --all | grep -Ei 'alex|cantu')
