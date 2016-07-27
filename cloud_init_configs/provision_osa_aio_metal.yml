@@ -6,9 +6,13 @@ packages:
   - screen
   - vim
 runcmd:
-  - export ANSIBLE_ROLE_FETCH_MODE=git-clone
+  - export HOME=/root/
+  - export ANSIBLE_FORCE_COLOR=true
   - git clone https://github.com/alextricity25/osa-multi-node-aio.git /root/osa-multi-node-aio
   - git config --global user.email "miguel.cantu@rackspace.com"
   - git config --global user.name "Miguel Alex Cantu"
+  - export ANSIBLE_ROLE_FETCH_MODE=git-clone
+  - export OSA_BRANCH=stable/mitaka
+  - echo $HOME >> /tmp/home_output.txt
   - cd /root/osa-multi-node-aio && bash ./build.sh
 output: { all: '| tee -a /var/log/cloud-init-output.log' }

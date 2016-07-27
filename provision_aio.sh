@@ -42,7 +42,7 @@ else
     NODEPLOY=""
 fi
 
-if [ "${4}" == 'metal' ]; then
+if [ "${4}" == 'metal' ] || [ "${3}" == 'metal' ]; then
     METAL="_metal"
 else
     METAL=""
@@ -62,3 +62,4 @@ fi
 
 # Actually creating the server..
 openstack server create --image $IMAGE --flavor $FLAVOR --key-name=alex_pub_iad --config-drive=true --user-data ${PATH_TO_USER_CONFIG} ${NAME_OF_VM}
+echo $PATH_TO_USER_CONFIG
