@@ -16,5 +16,6 @@ runcmd:
   - git config --global user.name "Miguel Alex Cantu"
   - git clone -b ${TAG} --recursive ${REPO} /opt/rpc-openstack
   - cd /opt/rpc-openstack && ./scripts/deploy.sh
+  - bash /tmp/configure_nfs.sh
 
 output: { all: '| tee -a /var/log/cloud-init-output.log' }

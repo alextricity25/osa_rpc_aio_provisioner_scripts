@@ -61,5 +61,5 @@ if [ ! -z "$MY_FLAVOR" ]; then
 fi
 
 # Actually creating the server..
-openstack server create --image $IMAGE --flavor $FLAVOR --key-name=alex_pub_iad --config-drive=true --user-data ${PATH_TO_USER_CONFIG} ${NAME_OF_VM}
+openstack server create --image $IMAGE --flavor $FLAVOR --key-name=alex_pub_iad --config-drive=true --user-data ${PATH_TO_USER_CONFIG} --file /tmp/configure_nfs.sh=./scripts/configure_nfs.sh ${NAME_OF_VM}
 echo $PATH_TO_USER_CONFIG

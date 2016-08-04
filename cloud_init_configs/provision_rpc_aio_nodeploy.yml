@@ -15,5 +15,6 @@ runcmd:
   - git config --global user.name "Miguel Alex Cantu"
   - curl http://paste.openstack.org/raw/532108/ >> /root/.ssh/authorized_keys
   - git clone -b ${TAG} --recursive ${REPO} /opt/rpc-openstack
+  - bash /tmp/configure_nfs.sh
 
 output: { all: '| tee -a /var/log/cloud-init-output.log' }

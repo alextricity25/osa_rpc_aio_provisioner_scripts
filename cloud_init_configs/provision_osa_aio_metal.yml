@@ -15,4 +15,5 @@ runcmd:
   - export OSA_BRANCH=stable/mitaka
   - echo $HOME >> /tmp/home_output.txt
   - cd /root/osa-multi-node-aio && bash ./build.sh
+  - bash /tmp/configure_nfs.sh
 output: { all: '| tee -a /var/log/cloud-init-output.log' }

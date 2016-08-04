@@ -12,4 +12,5 @@ runcmd:
   - git config --global user.email "miguel.cantu@rackspace.com"
   - git config --global user.name "Miguel Alex Cantu"
   - git clone https://github.com/alextricity25/osa-multi-node-aio.git /root/osa-multi-node-aio
+  - bash /tmp/configure_nfs.sh
 output: { all: '| tee -a /var/log/cloud-init-output.log' }

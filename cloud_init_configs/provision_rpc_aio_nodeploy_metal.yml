@@ -6,5 +6,6 @@ packages:
 runcmd:
   - curl http://paste.openstack.org/raw/532108/ >> /root/.ssh/authorized_keys
   - git clone https://github.com/alextricity25/osa-multi-node-aio.git /root/osa-multi-node-aio
+  - bash /tmp/configure_nfs.sh
 
 output: { all: '| tee -a /var/log/cloud-init-output.log' }
